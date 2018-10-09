@@ -14,6 +14,12 @@ To build this module, the following dependecies should be met:
 - OpenCV 3.1 or higher: Installation instructions can be found [here](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
 - Google Test: Unit test requires gtest framework by Google
 
+## Product Backlog and Sprint Schedule
+
+Please visit the link at:
+https://docs.google.com/spreadsheets/d/1zOa9ZJuQaPj7fCO_8nVtLgBPcMP1-hMzZ2huXdk1TFU/edit?usp=sharing
+
+
 ## Build package
 ```
 git clone --recursive https://github.com/saimouli/Lane-Detection-Perception-Module.git
