@@ -19,7 +19,30 @@ To build this module, the following dependecies should be met:
 Please visit the link at:
 https://docs.google.com/spreadsheets/d/1zOa9ZJuQaPj7fCO_8nVtLgBPcMP1-hMzZ2huXdk1TFU/edit?usp=sharing
 
+## License 
+```
+MIT License
 
+Copyright (c) 2018 Saimouli Katragadda, Adarsh Jagan Sathyamoorthy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 ## Build package
 ```
 git clone --recursive https://github.com/saimouli/Lane-Detection-Perception-Module.git
@@ -56,22 +79,31 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/saimouli/Lane-Detection-Perception-Module.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
 
 ```
 cd ~/workspace
-mkdir -p boilerplate-eclipse
-cd boilerplate-eclipse
-cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../cpp-boilerplate/
+mkdir -p LaneVision-eclipse
+cd LaneVision-eclipse
+cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../Lane-Detection-Perception-Module/
+```
+## Doxygen
+To install Doxygen
+```
+sudo apt install doxygen
+```
+To generate the Doxygen documentation 
+```
+doxygen ./Doxygen
 ```
 
 ## Import
 
 Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
-Select "boilerplate-eclipse" directory created previously as root directory -> Finish
+Select "LaneVision-eclipse" directory created previously as root directory -> Finish
 
 # Edit
 
@@ -88,4 +120,4 @@ unfold Build Targets, double click on "all" to build all projects.
 1. In Eclipse, right click on the boilerplate-eclipse in Project Explorer,
 select Run As -> Local C/C++ Application
 
-2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
+2. Choose the binaries to run (vision-app for application, cpp-test for unit testing)
