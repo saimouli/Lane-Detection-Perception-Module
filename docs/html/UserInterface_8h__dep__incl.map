@@ -1,0 +1,6 @@
+<map id="include/UserInterface.h" name="include/UserInterface.h">
+<area shape="rect" id="node2" href="$FrameParser_8cpp.html" title="Implements FrameParser class methods. " alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node3" href="$FrameParser_8h.html" title="FrameParser Class declaration &#160;Declared functions Class to extract frames from the video input..." alt="" coords="106,80,259,107"/>
+<area shape="rect" id="node4" href="$FrameParserTest_8cpp.html" title="Implements tests for FrameParser class methods. " alt="" coords="198,155,373,181"/>
+<area shape="rect" id="node5" href="$UserInterfaceTest_8cpp.html" title="Unit test for the UserInterface class. " alt="" coords="335,80,513,107"/>
+</map>

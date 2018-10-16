@@ -1,0 +1,95 @@
+\hypertarget{classFrameParser}{}\section{Frame\+Parser Class Reference}
+\label{classFrameParser}\index{Frame\+Parser@{Frame\+Parser}}
+
+
+Class \hyperlink{classFrameParser}{Frame\+Parser} The following class \hyperlink{classFrameParser}{Frame\+Parser} aids \hyperlink{classUserInterface}{User\+Interface} class by parsing the frames in a video and calling the \hyperlink{classVisionModule}{Vision\+Module} and \hyperlink{classUserInterface}{User\+Interface} class for further image processing using Open\+CV.  
+
+
+
+
+{\ttfamily \#include $<$Frame\+Parser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrameParser_adf34f5de47578ffa08286152d50ce43f}{Frame\+Parser} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classFrameParser}{Frame\+Parser} \end{DoxyCompactList}\item 
+\hyperlink{classFrameParser_a844ec6e5e1978dbf60944a072f4bbadc}{$\sim$\+Frame\+Parser} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classFrameParser}{Frame\+Parser} \end{DoxyCompactList}\item 
+int \hyperlink{classFrameParser_aa3b62170c32136f78af7465bf13d4485}{extract\+Frame} (\hyperlink{classUserInterface}{User\+Interface} interface, bool test)
+\begin{DoxyCompactList}\small\item\em Function extract\+Frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classFrameParser}{Frame\+Parser} The following class \hyperlink{classFrameParser}{Frame\+Parser} aids \hyperlink{classUserInterface}{User\+Interface} class by parsing the frames in a video and calling the \hyperlink{classVisionModule}{Vision\+Module} and \hyperlink{classUserInterface}{User\+Interface} class for further image processing using Open\+CV. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Frame\+Parser@{Frame\+Parser}!Frame\+Parser@{Frame\+Parser}}
+\index{Frame\+Parser@{Frame\+Parser}!Frame\+Parser@{Frame\+Parser}}
+\subsubsection[{\texorpdfstring{Frame\+Parser()}{FrameParser()}}]{\setlength{\rightskip}{0pt plus 5cm}Frame\+Parser\+::\+Frame\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFrameParser_adf34f5de47578ffa08286152d50ce43f}{}\label{classFrameParser_adf34f5de47578ffa08286152d50ce43f}
+
+
+constructor \hyperlink{classFrameParser}{Frame\+Parser} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Frame\+Parser@{Frame\+Parser}!````~Frame\+Parser@{$\sim$\+Frame\+Parser}}
+\index{````~Frame\+Parser@{$\sim$\+Frame\+Parser}!Frame\+Parser@{Frame\+Parser}}
+\subsubsection[{\texorpdfstring{$\sim$\+Frame\+Parser()}{~FrameParser()}}]{\setlength{\rightskip}{0pt plus 5cm}Frame\+Parser\+::$\sim$\+Frame\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classFrameParser_a844ec6e5e1978dbf60944a072f4bbadc}{}\label{classFrameParser_a844ec6e5e1978dbf60944a072f4bbadc}
+
+
+destructor \hyperlink{classFrameParser}{Frame\+Parser} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Frame\+Parser@{Frame\+Parser}!extract\+Frame@{extract\+Frame}}
+\index{extract\+Frame@{extract\+Frame}!Frame\+Parser@{Frame\+Parser}}
+\subsubsection[{\texorpdfstring{extract\+Frame(\+User\+Interface interface, bool test)}{extractFrame(UserInterface interface, bool test)}}]{\setlength{\rightskip}{0pt plus 5cm}int Frame\+Parser\+::extract\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Interface}}]{interface, }
+\item[{bool}]{test}
+\end{DoxyParamCaption}
+)}\hypertarget{classFrameParser_aa3b62170c32136f78af7465bf13d4485}{}\label{classFrameParser_aa3b62170c32136f78af7465bf13d4485}
+
+
+Function extract\+Frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & of type \hyperlink{classUserInterface}{User\+Interface} \\
+\hline
+{\em test} & of type bool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the program is successful else -\/1 The following function will extract frames from the video input and using the frames calls \hyperlink{classVisionModule}{Vision\+Module} and user\+Interface class 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{FrameParser_8h}{Frame\+Parser.\+h}\item 
+app/\hyperlink{FrameParser_8cpp}{Frame\+Parser.\+cpp}\end{DoxyCompactItemize}

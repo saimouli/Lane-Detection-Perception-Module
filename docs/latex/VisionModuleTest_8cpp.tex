@@ -1,0 +1,194 @@
+\hypertarget{VisionModuleTest_8cpp}{}\section{test/\+Vision\+Module\+Test.cpp File Reference}
+\label{VisionModuleTest_8cpp}\index{test/\+Vision\+Module\+Test.\+cpp@{test/\+Vision\+Module\+Test.\+cpp}}
+
+
+Test for \hyperlink{classVisionModule}{Vision\+Module} class methods.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$Vision\+Module.\+h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for Vision\+Module\+Test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VisionModuleTest_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{VisionModuleTest_8cpp_aca4f0f061e5715dcadba05cbcde16425}{T\+E\+ST} (camera\+Matrix\+Check, testcamera\+Matrix\+Size)
+\begin{DoxyCompactList}\small\item\em Case to test if Camera\+Matrix is 3x3 matrix. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_aa92e5219c48d40f5a2301d457225b81c}{T\+E\+ST} (distortion\+Coeff\+Check, testdistortion\+Coeff\+Size)
+\begin{DoxyCompactList}\small\item\em Case to test if distortion\+Coeff is a 5x1 matrix. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_a10870cad788d7a27e6a1e5cfe1ba1b4e}{T\+E\+ST} (undistort\+Frame\+Check, test\+Undistorted\+Frame\+Size)
+\begin{DoxyCompactList}\small\item\em Case to test if the frame size we get after resize is equal to the original image size. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_a97c5fed7df3c2ef2f0c1b74447f4ad54}{T\+E\+ST} (smoothen\+Frame\+Check, test\+Non\+Aggressive\+Smoothing)
+\begin{DoxyCompactList}\small\item\em Case to ensure that the image isn\textquotesingle{}t aggressively smoothened. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_aef13c31355d152d8a00f5aa391a73eee}{T\+E\+ST} (pers\+Matrix\+Check, test\+Matrix\+Sizeand\+Inverse)
+\begin{DoxyCompactList}\small\item\em Case to test the sizes of the calculated perspective transform matrices is 3x3 and the multiplication leads a matrix with non zero diagonal elements. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_a0d379af9b7a0152379125f6967327ccf}{T\+E\+ST} (peak\+Value\+Check, test\+Left\+Right\+Histogram\+Peaks)
+\begin{DoxyCompactList}\small\item\em Case to test if the returned peaks have the correct x coordinates. \end{DoxyCompactList}\item 
+\hyperlink{VisionModuleTest_8cpp_ab7687a73dbba121fcb5c57757d3405b4}{T\+E\+ST} (centroid\+Heading\+Angle\+Check, check\+Centroid\+Vectorand\+Heading\+Angle)
+\begin{DoxyCompactList}\small\item\em Case to test left and right centroid x coordinates for proper values and correct theta value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test for \hyperlink{classVisionModule}{Vision\+Module} class methods. 
+
+\begin{DoxyAuthor}{Author}
+Saimouli Katragadda (saimouli) 
+
+Adarsh Jagan Sathyamoorthy 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License Copyright (c) 2018 Saimouli Katragadda, Adarsh Jagan Sathyamoorthy 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(camera\+Matrix\+Check, testcamera\+Matrix\+Size)}{TEST(cameraMatrixCheck, testcameraMatrixSize)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{camera\+Matrix\+Check}]{, }
+\item[{testcamera\+Matrix\+Size}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_aca4f0f061e5715dcadba05cbcde16425}{}\label{VisionModuleTest_8cpp_aca4f0f061e5715dcadba05cbcde16425}
+
+
+Case to test if Camera\+Matrix is 3x3 matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(distortion\+Coeff\+Check, testdistortion\+Coeff\+Size)}{TEST(distortionCoeffCheck, testdistortionCoeffSize)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{distortion\+Coeff\+Check}]{, }
+\item[{testdistortion\+Coeff\+Size}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_aa92e5219c48d40f5a2301d457225b81c}{}\label{VisionModuleTest_8cpp_aa92e5219c48d40f5a2301d457225b81c}
+
+
+Case to test if distortion\+Coeff is a 5x1 matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(undistort\+Frame\+Check, test\+Undistorted\+Frame\+Size)}{TEST(undistortFrameCheck, testUndistortedFrameSize)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{undistort\+Frame\+Check}]{, }
+\item[{test\+Undistorted\+Frame\+Size}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_a10870cad788d7a27e6a1e5cfe1ba1b4e}{}\label{VisionModuleTest_8cpp_a10870cad788d7a27e6a1e5cfe1ba1b4e}
+
+
+Case to test if the frame size we get after resize is equal to the original image size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(smoothen\+Frame\+Check, test\+Non\+Aggressive\+Smoothing)}{TEST(smoothenFrameCheck, testNonAggressiveSmoothing)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{smoothen\+Frame\+Check}]{, }
+\item[{test\+Non\+Aggressive\+Smoothing}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_a97c5fed7df3c2ef2f0c1b74447f4ad54}{}\label{VisionModuleTest_8cpp_a97c5fed7df3c2ef2f0c1b74447f4ad54}
+
+
+Case to ensure that the image isn\textquotesingle{}t aggressively smoothened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(pers\+Matrix\+Check, test\+Matrix\+Sizeand\+Inverse)}{TEST(persMatrixCheck, testMatrixSizeandInverse)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{pers\+Matrix\+Check}]{, }
+\item[{test\+Matrix\+Sizeand\+Inverse}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_aef13c31355d152d8a00f5aa391a73eee}{}\label{VisionModuleTest_8cpp_aef13c31355d152d8a00f5aa391a73eee}
+
+
+Case to test the sizes of the calculated perspective transform matrices is 3x3 and the multiplication leads a matrix with non zero diagonal elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(peak\+Value\+Check, test\+Left\+Right\+Histogram\+Peaks)}{TEST(peakValueCheck, testLeftRightHistogramPeaks)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{peak\+Value\+Check}]{, }
+\item[{test\+Left\+Right\+Histogram\+Peaks}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_a0d379af9b7a0152379125f6967327ccf}{}\label{VisionModuleTest_8cpp_a0d379af9b7a0152379125f6967327ccf}
+
+
+Case to test if the returned peaks have the correct x coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Vision\+Module\+Test.\+cpp@{Vision\+Module\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(centroid\+Heading\+Angle\+Check, check\+Centroid\+Vectorand\+Heading\+Angle)}{TEST(centroidHeadingAngleCheck, checkCentroidVectorandHeadingAngle)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{centroid\+Heading\+Angle\+Check}]{, }
+\item[{check\+Centroid\+Vectorand\+Heading\+Angle}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{VisionModuleTest_8cpp_ab7687a73dbba121fcb5c57757d3405b4}{}\label{VisionModuleTest_8cpp_ab7687a73dbba121fcb5c57757d3405b4}
+
+
+Case to test left and right centroid x coordinates for proper values and correct theta value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}

@@ -1,0 +1,392 @@
+\hypertarget{classVisionModule}{}\section{Vision\+Module Class Reference}
+\label{classVisionModule}\index{Vision\+Module@{Vision\+Module}}
+
+
+Class \hyperlink{classVisionModule}{Vision\+Module} The following class \hyperlink{classVisionModule}{Vision\+Module} gets the frames from \hyperlink{classFrameParser}{Frame\+Parser} class and is responsible for filtering and detecting hough lines on to an image.  
+
+
+
+
+{\ttfamily \#include $<$Vision\+Module.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVisionModule_a08440f0aeb474f1927b98e01953f47b0}{Vision\+Module} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classVisionModule}{Vision\+Module} \end{DoxyCompactList}\item 
+\hyperlink{classVisionModule_a820fbd8149b606d24135e2738beb50ec}{$\sim$\+Vision\+Module} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classVisionModule}{Vision\+Module} \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classVisionModule_a8f2c6222b903345f51dcd2915ad9b242}{return\+Camera\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Camera\+Matrix. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classVisionModule_a0139269bcadfeec6da4a67d8c23ebfed}{return\+Distortion\+Coeff} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Distortion\+Coeff. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_a757a41b41c14a7589196db35ac406f55}{un\+Distort\+Image} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Function un\+Distort\+Image. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_a1e405de689311b5c50f2a9e5e2e229a8}{smoothen\+Image} ()
+\begin{DoxyCompactList}\small\item\em Function smoothen\+Image. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classVisionModule_a196e5fdf5247b2485a49ece512d45143}{return\+Undistorted\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Undistorted\+Frame. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_abd63e180582cef1e7ea78572be1c9325}{compute\+Perspective\+Matrices} ()
+\begin{DoxyCompactList}\small\item\em Function compute\+Perspective\+Matrices. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Mat $>$ \hyperlink{classVisionModule_acec716f4e141ce0d73e2b6e535c4050f}{return\+Perspective\+Matrices} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Perspective\+Matrices. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classVisionModule_aa632f8351221993c5e69cc27b8016385}{get\+Top\+View} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Function get\+Top\+View. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_a883ee8ac87edef9ef6988008149c8f0c}{create\+Mask} (const cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Function create\+Mask. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_afc8709c69a1fedc95d1799bee0991473}{get\+Histogram\+Peaks} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Histogram\+Peaks. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Point $>$ \hyperlink{classVisionModule_a884fdcb63f2c845818edbd203f1e9c52}{return\+Peaks} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Peaks. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Point $>$ \hyperlink{classVisionModule_a6c892c2a5c30176540e99590f01bb86a}{isolate\+Lane} (cv\+::\+Point peak, const cv\+::\+Mat \&top\+View)
+\begin{DoxyCompactList}\small\item\em Function isolate\+Lane. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionModule_ae2be774298c5e7b88ca9eb0d3b7dbe31}{compute\+Heading\+Angle} (std\+::vector$<$ cv\+::\+Point $>$ box\+Centroid\+Left, std\+::vector$<$ cv\+::\+Point $>$ box\+Centroid\+Right)
+\begin{DoxyCompactList}\small\item\em Function compute\+Heading\+Angle. \end{DoxyCompactList}\item 
+double \hyperlink{classVisionModule_a8b33ffa0228d69227d0162b20ef3356f}{return\+Heading\+Angle} ()
+\begin{DoxyCompactList}\small\item\em Function return\+Heading\+Angle. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classVisionModule_a10a7dfb320258e1c8ec6b782e29e4648}{lane\+Detection} (cv\+::\+Mat \&)
+\begin{DoxyCompactList}\small\item\em Function lane\+Detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classVisionModule}{Vision\+Module} The following class \hyperlink{classVisionModule}{Vision\+Module} gets the frames from \hyperlink{classFrameParser}{Frame\+Parser} class and is responsible for filtering and detecting hough lines on to an image. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vision\+Module@{Vision\+Module}!Vision\+Module@{Vision\+Module}}
+\index{Vision\+Module@{Vision\+Module}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{Vision\+Module()}{VisionModule()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+Module\+::\+Vision\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a08440f0aeb474f1927b98e01953f47b0}{}\label{classVisionModule_a08440f0aeb474f1927b98e01953f47b0}
+
+
+constructor \hyperlink{classVisionModule}{Vision\+Module} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!````~Vision\+Module@{$\sim$\+Vision\+Module}}
+\index{````~Vision\+Module@{$\sim$\+Vision\+Module}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{$\sim$\+Vision\+Module()}{~VisionModule()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+Module\+::$\sim$\+Vision\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a820fbd8149b606d24135e2738beb50ec}{}\label{classVisionModule_a820fbd8149b606d24135e2738beb50ec}
+
+
+destructor \hyperlink{classVisionModule}{Vision\+Module} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Vision\+Module@{Vision\+Module}!compute\+Heading\+Angle@{compute\+Heading\+Angle}}
+\index{compute\+Heading\+Angle@{compute\+Heading\+Angle}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{compute\+Heading\+Angle(std\+::vector$<$ cv\+::\+Point $>$ box\+Centroid\+Left, std\+::vector$<$ cv\+::\+Point $>$ box\+Centroid\+Right)}{computeHeadingAngle(std::vector< cv::Point > boxCentroidLeft, std::vector< cv::Point > boxCentroidRight)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::compute\+Heading\+Angle (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ cv\+::\+Point $>$}]{box\+Centroid\+Left, }
+\item[{std\+::vector$<$ cv\+::\+Point $>$}]{box\+Centroid\+Right}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_ae2be774298c5e7b88ca9eb0d3b7dbe31}{}\label{classVisionModule_ae2be774298c5e7b88ca9eb0d3b7dbe31}
+
+
+Function compute\+Heading\+Angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+Centroid\+Left} & of type \+:vector$<$cv\+::\+Point$>$ \\
+\hline
+{\em box\+Centroid\+Right} & of type \+:vector$<$cv\+::\+Point$>$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will compute cars heading angle based on detected centroid points and connecting lines 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!compute\+Perspective\+Matrices@{compute\+Perspective\+Matrices}}
+\index{compute\+Perspective\+Matrices@{compute\+Perspective\+Matrices}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{compute\+Perspective\+Matrices()}{computePerspectiveMatrices()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::compute\+Perspective\+Matrices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_abd63e180582cef1e7ea78572be1c9325}{}\label{classVisionModule_abd63e180582cef1e7ea78572be1c9325}
+
+
+Function compute\+Perspective\+Matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will apply homography to the image to get the birds eye 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!create\+Mask@{create\+Mask}}
+\index{create\+Mask@{create\+Mask}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{create\+Mask(const cv\+::\+Mat \&frame)}{createMask(const cv::Mat &frame)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::create\+Mask (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Mat \&}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a883ee8ac87edef9ef6988008149c8f0c}{}\label{classVisionModule_a883ee8ac87edef9ef6988008149c8f0c}
+
+
+Function create\+Mask. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will create a mask from the image 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!get\+Histogram\+Peaks@{get\+Histogram\+Peaks}}
+\index{get\+Histogram\+Peaks@{get\+Histogram\+Peaks}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{get\+Histogram\+Peaks()}{getHistogramPeaks()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::get\+Histogram\+Peaks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_afc8709c69a1fedc95d1799bee0991473}{}\label{classVisionModule_afc8709c69a1fedc95d1799bee0991473}
+
+
+Function get\+Histogram\+Peaks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will apply a histogram and finds a region where the white threshold values are high 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!get\+Top\+View@{get\+Top\+View}}
+\index{get\+Top\+View@{get\+Top\+View}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{get\+Top\+View(const cv\+::\+Mat \&frame)}{getTopView(const cv::Mat &frame)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vision\+Module\+::get\+Top\+View (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Mat \&}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_aa632f8351221993c5e69cc27b8016385}{}\label{classVisionModule_aa632f8351221993c5e69cc27b8016385}
+
+
+Function get\+Top\+View. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Frame} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+frame of type cv\+::\+Mat The following function will get the birds view of the image 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!isolate\+Lane@{isolate\+Lane}}
+\index{isolate\+Lane@{isolate\+Lane}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{isolate\+Lane(cv\+::\+Point peak, const cv\+::\+Mat \&top\+View)}{isolateLane(cv::Point peak, const cv::Mat &topView)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+Point $>$ Vision\+Module\+::isolate\+Lane (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Point}]{peak, }
+\item[{const cv\+::\+Mat \&}]{top\+View}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a6c892c2a5c30176540e99590f01bb86a}{}\label{classVisionModule_a6c892c2a5c30176540e99590f01bb86a}
+
+
+Function isolate\+Lane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em peak} & of type cv\+::\+Point \\
+\hline
+{\em top\+View} & of type const cv\+::\+Mat\& \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point of type std\+::vector The following function draws boxes on the road lanes and returns centroid points of the boxes. 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!lane\+Detection@{lane\+Detection}}
+\index{lane\+Detection@{lane\+Detection}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{lane\+Detection(cv\+::\+Mat \&)}{laneDetection(cv::Mat &)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vision\+Module\+::lane\+Detection (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a10a7dfb320258e1c8ec6b782e29e4648}{}\label{classVisionModule_a10a7dfb320258e1c8ec6b782e29e4648}
+
+
+Function lane\+Detection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+final\+Image of type cv\+::\+Mat The following function will augment the hough lines display text on the passed image using vector of hough lines and heading angle variables 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Camera\+Matrix@{return\+Camera\+Matrix}}
+\index{return\+Camera\+Matrix@{return\+Camera\+Matrix}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Camera\+Matrix()}{returnCameraMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vision\+Module\+::return\+Camera\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a8f2c6222b903345f51dcd2915ad9b242}{}\label{classVisionModule_a8f2c6222b903345f51dcd2915ad9b242}
+
+
+Function return\+Camera\+Matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+camera\+Matrix of type cv\+::\+Mat The following function will return the camera\+Matrix private variable 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Distortion\+Coeff@{return\+Distortion\+Coeff}}
+\index{return\+Distortion\+Coeff@{return\+Distortion\+Coeff}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Distortion\+Coeff()}{returnDistortionCoeff()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vision\+Module\+::return\+Distortion\+Coeff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a0139269bcadfeec6da4a67d8c23ebfed}{}\label{classVisionModule_a0139269bcadfeec6da4a67d8c23ebfed}
+
+
+Function return\+Distortion\+Coeff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distortion\+Coeff of type cv\+::\+Mat The following function will return the distortion\+Coeff private variable 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Heading\+Angle@{return\+Heading\+Angle}}
+\index{return\+Heading\+Angle@{return\+Heading\+Angle}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Heading\+Angle()}{returnHeadingAngle()}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+Module\+::return\+Heading\+Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a8b33ffa0228d69227d0162b20ef3356f}{}\label{classVisionModule_a8b33ffa0228d69227d0162b20ef3356f}
+
+
+Function return\+Heading\+Angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle of type double The following function returns the calculated heading angle 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Peaks@{return\+Peaks}}
+\index{return\+Peaks@{return\+Peaks}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Peaks()}{returnPeaks()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+Point $>$ Vision\+Module\+::return\+Peaks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a884fdcb63f2c845818edbd203f1e9c52}{}\label{classVisionModule_a884fdcb63f2c845818edbd203f1e9c52}
+
+
+Function return\+Peaks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+peaks of type std\+::vector$<$cv\+::\+Point$>$ The following function returns the peaks in the histogram 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Perspective\+Matrices@{return\+Perspective\+Matrices}}
+\index{return\+Perspective\+Matrices@{return\+Perspective\+Matrices}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Perspective\+Matrices()}{returnPerspectiveMatrices()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+Mat $>$ Vision\+Module\+::return\+Perspective\+Matrices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_acec716f4e141ce0d73e2b6e535c4050f}{}\label{classVisionModule_acec716f4e141ce0d73e2b6e535c4050f}
+
+
+Function return\+Perspective\+Matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+perspective\+Matrices of type std\+::vector$<$cv\+::\+Mat$>$ The following function returns the computed perspective matrices private data member 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!return\+Undistorted\+Frame@{return\+Undistorted\+Frame}}
+\index{return\+Undistorted\+Frame@{return\+Undistorted\+Frame}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{return\+Undistorted\+Frame()}{returnUndistortedFrame()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Vision\+Module\+::return\+Undistorted\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a196e5fdf5247b2485a49ece512d45143}{}\label{classVisionModule_a196e5fdf5247b2485a49ece512d45143}
+
+
+Function return\+Undistorted\+Frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+undistorted\+Frame of type cv\+::\+Mat The following function returns the undistorted image stored as private data member 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!smoothen\+Image@{smoothen\+Image}}
+\index{smoothen\+Image@{smoothen\+Image}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{smoothen\+Image()}{smoothenImage()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::smoothen\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a1e405de689311b5c50f2a9e5e2e229a8}{}\label{classVisionModule_a1e405de689311b5c50f2a9e5e2e229a8}
+
+
+Function smoothen\+Image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will smoothen the image by applying gaussian filter 
+\end{DoxyReturn}
+\index{Vision\+Module@{Vision\+Module}!un\+Distort\+Image@{un\+Distort\+Image}}
+\index{un\+Distort\+Image@{un\+Distort\+Image}!Vision\+Module@{Vision\+Module}}
+\subsubsection[{\texorpdfstring{un\+Distort\+Image(const cv\+::\+Mat \&frame)}{unDistortImage(const cv::Mat &frame)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Module\+::un\+Distort\+Image (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Mat \&}]{frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionModule_a757a41b41c14a7589196db35ac406f55}{}\label{classVisionModule_a757a41b41c14a7589196db35ac406f55}
+
+
+Function un\+Distort\+Image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+Frame} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function will undistort the given image using the datasets given calibration matrix 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{VisionModule_8h}{Vision\+Module.\+h}\item 
+app/\hyperlink{VisionModule_8cpp}{Vision\+Module.\+cpp}\end{DoxyCompactItemize}
