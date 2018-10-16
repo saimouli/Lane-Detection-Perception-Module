@@ -25,24 +25,25 @@
 /**
  * @file      FrameParser.cpp
  * @author    Saimouli Katragadda (saimouli)
+ * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
  * @brief     Implements FrameParser class methods
  */
 #include <FrameParser.h>
+#include <VisionModule.h>
+#include <UserInterface.h>
 
 FrameParser::FrameParser() {
-  // TODO Auto-generated constructor stub
-
 }
 
 FrameParser::~FrameParser() {
-  // TODO Auto-generated destructor stub
 }
 
-void FrameParser::extractFrame() {
-
+int FrameParser::extractFrame(UserInterface interface) {
+return 0;
 }
 
-void FrameParser::processFrame() {
 
-}
+
+
+
