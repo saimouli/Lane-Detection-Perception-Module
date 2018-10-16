@@ -23,7 +23,7 @@
  *******************************************************************************/
 
 /**
- * @file      main.cpp
+ * @file      FrameParserTest.cpp
  * @author    Saimouli Katragadda (saimouli)
  * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
@@ -40,8 +40,8 @@
 #include<iostream>
 
 /**
- *@brief Case to test if extractFrame functions executes sucessfully
- *@param none
+ *@brief  Case to test if extractFrame functions executes successfully
+ *@param  none
  *@return none
  */
 
