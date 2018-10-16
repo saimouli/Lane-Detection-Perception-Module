@@ -25,12 +25,19 @@
 /**
  * @file      main.cpp
  * @author    Saimouli Katragadda (saimouli)
+ * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
+ * Copyright (c) 2018 Saimouli Katragadda, Adarsh Jagan Sathyamoorthy
  * @brief     Implements a demo for lane detection and tracking
  */
 #include <iostream>
+#include <UserInterface.h>
+#include <FrameParser.h>
 
 int main() {
-
-    return 0;
+  FrameParser parser;
+  UserInterface interface;
+  parser.extractFrame(interface);
+  return 0;
 }
+
