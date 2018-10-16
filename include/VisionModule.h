@@ -196,24 +196,6 @@ class VisionModule {
   void createMask(const cv::Mat& frame);
 
   /**
-   * @brief Function edgeFilter
-   * @param frame of type cv::Mat
-   * @return none
-   * The following function will detect edges in images
-   */
-
-  void edgeFilter(cv::Mat& processFrame);
-
-  /**
-   * @brief Function houghLinesDetect
-   * @param processFrame of type cv::Mat
-   * @return lines of type vector<cv::4i>
-   * The following function will detect hough lines on a
-   * processed image
-   */
-  std::vector<cv::Vec4i> houghLinesDetect(cv::Mat& processFrames);
-
-  /**
    * @brief Function getHistogramPeaks
    * @param none
    * @return none
@@ -267,7 +249,6 @@ class VisionModule {
    * and heading angle variables
    */
   cv::Mat laneDetection(cv::Mat&);
-
 };
 
 #endif /* INCLUDE_VISIONMODULE_H_ */

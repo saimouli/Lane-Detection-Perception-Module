@@ -32,11 +32,9 @@
 
 VisionModule::VisionModule()
     : headingAngle(0) {
-
 }
 
 VisionModule::~VisionModule() {
-
 }
 
 cv::Mat VisionModule::returnCameraMatrix() {
@@ -92,11 +90,6 @@ void VisionModule::createMask(const cv::Mat& topView) {
   bitwise_or(whiteMask, yellowMask, mask);
 }
 
-std::vector<cv::Vec4i> VisionModule::houghLinesDetect(cv::Mat& processFrames) {
-  std::vector<cv::Vec4i> lines;
-  return lines;
-}
-
 void VisionModule::getHistogramPeaks() {
   cv::Point leftPeak;
   cv::Point rightPeak;
@@ -125,7 +118,7 @@ std::vector<cv::Point> VisionModule::returnPeaks() {
 
 std::vector<cv::Point> VisionModule::isolateLane(cv::Point peak,
                                                  const cv::Mat& topView) {
-   std::vector<cv::Point> boxCentroid;
+  std::vector<cv::Point> boxCentroid;
   boxCentroid.clear();
   for (int i = 0; i < numBoxes; i++) {
     int boxHeight = mask.rows / numBoxes;
