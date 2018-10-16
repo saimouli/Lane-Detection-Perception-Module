@@ -48,11 +48,12 @@ cv::Mat VisionModule::returnDistortionCoeff() {
 }
 
 void VisionModule::unDistortImage(const cv::Mat& frame) {
-
+  undistortedFrame.release();
+  undistort(frame, undistortedFrame, cameraMatrix, distortionCoeff);
 }
 
 void VisionModule::smoothenImage() {
-
+  cv::GaussianBlur(undistortedFrame, undistortedFrame, cv::Size(3, 3), 0, 0);
 }
 
 cv::Mat VisionModule::returnUndistortedFrame() {
@@ -60,7 +61,12 @@ cv::Mat VisionModule::returnUndistortedFrame() {
 }
 
 void VisionModule::computePerspectiveMatrices() {
-
+  cv::Mat M;
+  cv::Mat Minv;
+  M = getPerspectiveTransform(srcPoints, dstPoints);
+  Minv = getPerspectiveTransform(dstPoints, srcPoints);
+  perspectiveMatrices.push_back(M);
+  perspectiveMatrices.push_back(Minv);
 }
 
 std::vector<cv::Mat> VisionModule::returnPerspectiveMatrices() {
@@ -69,6 +75,7 @@ std::vector<cv::Mat> VisionModule::returnPerspectiveMatrices() {
 
 cv::Mat VisionModule::getTopView(const cv::Mat& frame) {
   cv::Mat topView;
+  warpPerspective(frame, topView, perspectiveMatrices[0], topView.size());
   return topView;
 }
 
