@@ -52,11 +52,18 @@ UserInterface::~UserInterface() {
 }
 
 std::string UserInterface::returnDefaultChoice() {
+  if (defaultChoice == "n" || defaultChoice == "N") {
+    std::cout << "Do you want to test for default case? (enter y/n)"
+              << std::endl;
+    std::cin >> defaultChoice;
+  }
   return defaultChoice;
 }
 
 void UserInterface::getUserChoice() {
-
+  std::cout << "Enter 0- image input, 1- video file, 2- live stream"
+            << std::endl;
+  std::cin >> userChoice;
 }
 
 int UserInterface::returnUserChoice() {
@@ -64,7 +71,14 @@ int UserInterface::returnUserChoice() {
 }
 
 void UserInterface::getInputLocation() {
-
+  if (userChoice == 0 || userChoice == 1) {
+    std::cout << "Enter the location of the file (ex:../data/project_video.mp4)"
+              << std::endl;
+    std::cin >> fileLocation;
+  } else {
+    std::cout << "Enter the camera ID number (Ex: 0)" << std::endl;
+    std::cin >> cameraID;
+  }
 }
 
 std::string UserInterface::returnInputLocation() {
@@ -76,6 +90,6 @@ int UserInterface::returnCameraID() {
 }
 
 void UserInterface::displayLanes(cv::Mat frame) {
- 
+
 }
 

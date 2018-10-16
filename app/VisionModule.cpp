@@ -167,7 +167,35 @@ std::vector<cv::Point> VisionModule::isolateLane(cv::Point peak,
 void VisionModule::computeHeadingAngle(
     std::vector<cv::Point> boxCentroidLeft,
     std::vector<cv::Point> boxCentroidRight) {
+  cv::Point farPoint, nearPoint;
+  farPoint.x = (boxCentroidLeft[8].x + boxCentroidRight[8].x) / 2;
+  farPoint.y = (boxCentroidLeft[8].y + boxCentroidRight[8].y) / 2;
+  nearPoint.x = (boxCentroidLeft[0].x + boxCentroidRight[0].x) / 2;
+  nearPoint.y = (boxCentroidLeft[0].y + boxCentroidRight[0].y) / 2;
 
+  if (farPoint.x != nearPoint.x) {
+    double slope = (farPoint.y - nearPoint.y) / (farPoint.x - nearPoint.x);
+    if (slope > 0) {
+      headingAngle = atan(slope) * 180 / 3.1415;
+      headingAngle = 90 - headingAngle;
+      cv::putText(undistortedFrame,
+                  std::to_string(headingAngle) + " deg to the left",
+                  cv::Point(10, 40), cv::FONT_HERSHEY_SIMPLEX, 1,
+                  cv::Scalar(250));
+    }
+    if (slope < 0) {
+      headingAngle = atan(-slope) * 180 / 3.1415;
+      headingAngle = 90 - headingAngle;
+      cv::putText(undistortedFrame,
+                  std::to_string(headingAngle) + " deg to the right",
+                  cv::Point(10, 40), cv::FONT_HERSHEY_SIMPLEX, 1,
+                  cv::Scalar(250));
+    }
+
+  } else {
+    cv::putText(undistortedFrame, "0 deg going straight", cv::Point(10, 40),
+                cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(250));
+  }
 }
 
 double VisionModule::returnHeadingAngle() {
@@ -175,6 +203,35 @@ double VisionModule::returnHeadingAngle() {
 }
 
 cv::Mat VisionModule::laneDetection(cv::Mat& frame) {
+  cv::resize(frame, frame, cv::Size(1280, 720), 1, 1);
+  unDistortImage(frame);
+  smoothenImage();
 
+  computePerspectiveMatrices();
+  cv::Mat topView = getTopView(undistortedFrame);
+  createMask(topView);
+  getHistogramPeaks();
+
+  if (peaks[0].x > 100 && peaks[1].x < (mask.cols - 100)) {
+    std::vector<cv::Point> boxCentroidLeft = isolateLane(peaks[0], topView);
+    std::vector<cv::Point> boxCentroidRight = isolateLane(peaks[1], topView);
+
+    std::vector<cv::Point2f> inputPoints { { boxCentroidLeft[5] }, {
+        boxCentroidRight[5] }, { boxCentroidRight[0] }, { boxCentroidLeft[0] } };
+
+    std::vector<cv::Point2f> outputPoints;
+
+    perspectiveTransform(inputPoints, outputPoints, perspectiveMatrices[1]);
+
+    std::vector<cv::Point> polygonPoints = { cv::Point(outputPoints[0]),
+        cv::Point(outputPoints[1]), cv::Point(outputPoints[2]), cv::Point(
+            outputPoints[3]) };
+
+    const cv::Point* firstPoint[1] = { &polygonPoints[0] };
+    int npoints[] = { 4 };
+    cv::fillPoly(undistortedFrame, firstPoint, npoints, 1,
+                 cv::Scalar(0, 255, 0), 8);
+    computeHeadingAngle(boxCentroidLeft, boxCentroidRight);
+  }
   return undistortedFrame;
 }
