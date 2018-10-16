@@ -1,0 +1,15 @@
+Done processing ./test/FrameParserTest.cpp
+Done processing ./test/main.cpp
+Done processing ./test/VisionModuleTest.cpp
+Done processing ./test/UserInterfaceTest.cpp
+Done processing ./include/FrameParser.h
+./include/VisionModule.h:58:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./include/VisionModule.h:63:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+Done processing ./include/VisionModule.h
+Done processing ./include/UserInterface.h
+Done processing ./app/UserInterface.cpp
+Done processing ./app/main.cpp
+Done processing ./app/FrameParser.cpp
+./app/VisionModule.cpp:213:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+Done processing ./app/VisionModule.cpp
+Total errors found: 3
