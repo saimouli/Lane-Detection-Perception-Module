@@ -116,6 +116,65 @@ TEST(persMatrixCheck, testMatrixSizeandInverse) {
   EXPECT_EQ(otherElements, zeroes);
 }
 
+TEST(peakValueCheck, testLeftRightHistogramPeaks) {
+  VisionModule v;
+  cv::Mat frame;
+  frame = cv::imread("../data/test.png");
+  v.computePerspectiveMatrices();
+  cv::Mat topViewFrame;
+  topViewFrame = v.getTopView(frame);
+  v.createMask(topViewFrame);
+  v.getHistogramPeaks();
+  std::vector<cv::Point> peaks = v.returnPeaks();
+
+  // Check that the right peak has greater x coordinate
+  ASSERT_LT(peaks[0].x, peaks[1].x);
+  // Check peak x coordinates are in correct ranges
+  ASSERT_GT(topViewFrame.cols / 2, peaks[0].x);
+  ASSERT_LT(topViewFrame.cols / 2, peaks[1].x);
+}
+
+TEST(centroidHeadingAngleCheck, checkCentroidVectorandHeadingAngle) {
+  VisionModule v;
+  cv::Mat topView;
+  topView = cv::imread("../data/pers_transform.png");
+  v.createMask(topView);
+  v.getHistogramPeaks();
+  std::vector<cv::Point> peaks = v.returnPeaks();
+  std::vector<cv::Point> leftCentroids;
+  std::vector<cv::Point> rightCentroids;
+  leftCentroids = v.isolateLane(peaks[0], topView);
+  rightCentroids = v.isolateLane(peaks[1], topView);
+
+  // Check that all right centroids have greater x value
+  const bool lessThan = std::equal(
+      std::begin(leftCentroids), std::end(leftCentroids),
+      std::begin(rightCentroids), std::end(rightCentroids),
+      [](cv::Point a, cv::Point b)->bool {return a.x <= b.x;});
+  ASSERT_EQ(lessThan, true);
+
+  // Check the values of centroid x coordinate is within expected range
+  for (std::vector<cv::Point>::iterator it = leftCentroids.begin();
+      it != leftCentroids.end(); ++it) {
+    ASSERT_GT((*it).x, 0);
+    ASSERT_LT((*it).x, topView.cols / 2);
+  }
+
+  for (std::vector<cv::Point>::iterator it = rightCentroids.begin();
+      it != rightCentroids.end(); ++it) {
+    ASSERT_GT((*it).x, topView.cols / 2);
+    ASSERT_LT((*it).x, topView.cols);
+  }
+
+  v.computeHeadingAngle(leftCentroids, rightCentroids);
+  double theta = v.returnHeadingAngle();
+  // Check if double type is returned
+  ASSERT_EQ(sizeof(v.returnHeadingAngle()), 8);
+  // Check limits of theta
+  ASSERT_LT(theta, 180);
+  ASSERT_GT(theta, -180);
+}
+
 
 
 
