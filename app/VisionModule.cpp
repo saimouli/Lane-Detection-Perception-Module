@@ -28,7 +28,7 @@
  * @copyright MIT License
  * @brief     Implements VisionModule class methods
  */
-#include <VisionModule.h>
+#include "VisionModule.h"
 
 VisionModule::VisionModule()
     : headingAngle(0) {
@@ -39,35 +39,78 @@ VisionModule::~VisionModule() {
 
 }
 
-void VisionModule::unDistrortImage(&cv::Mat processFrame) {
+cv::Mat VisionModule::returnCameraMatrix() {
+  return cameraMatrix;
+}
+
+cv::Mat VisionModule::returnDistortionCoeff() {
+  return distortionCoeff;
+}
+
+void VisionModule::unDistortImage(const cv::Mat& frame) {
 
 }
 
-void VisionModule::preProcess(&cv::Mat processFrame) {
+void VisionModule::smoothenImage() {
 
 }
 
-void VisionModule::perspectiveTransform(&cv::Mat processFrame) {
+cv::Mat VisionModule::returnUndistortedFrame() {
+  return undistortedFrame;
+}
+
+void VisionModule::computePerspectiveMatrices() {
 
 }
 
-void VisionModule::edgeFilter(&cv::Mat processFrame) {
+std::vector<cv::Mat> VisionModule::returnPerspectiveMatrices() {
+  return perspectiveMatrices;
+}
+
+cv::Mat VisionModule::getTopView(const cv::Mat& frame) {
+  cv::Mat topView;
+  return topView;
+}
+
+void VisionModule::createMask(const cv::Mat& topView) {
 
 }
 
-void VisionModule::getHistogram(&cv::Mat processFrame) {
+void VisionModule::edgeFilter(cv::Mat& processFrame) {
 
 }
 
-vector<cv::Vec4i> VisionModule::houghLinesDetect(&cv::Mat processFrames) {
+
+std::vector<cv::Vec4i> VisionModule::houghLinesDetect(cv::Mat& processFrames) {
+  std::vector<cv::Vec4i> lines;
+  return lines;
+}
+
+void VisionModule::getHistogramPeaks() {
 
 }
 
-double VisionModule::computeHeadingAngle(vector<cv::Vec4i> lines) {
-
-  return 0.0;
+std::vector<cv::Point> VisionModule::returnPeaks() {
+  return peaks;
 }
 
-cv::Mat VisionModule::laneDetection(&cv::Mat) {
+std::vector<cv::Point> VisionModule::isolateLane(cv::Point peak,
+                                                 const cv::Mat& topView) {
+  std::vector<cv::Point> boxCentroid;
+  return boxCentroid;
+}
 
+void VisionModule::computeHeadingAngle(
+    std::vector<cv::Point> boxCentroidLeft,
+    std::vector<cv::Point> boxCentroidRight) {
+
+}
+
+double VisionModule::returnHeadingAngle() {
+  return headingAngle;
+}
+
+cv::Mat VisionModule::laneDetection(cv::Mat& frame) {
+
+  return undistortedFrame;
 }
