@@ -1,4 +1,4 @@
-add_executable(vision-app UserInterface.cpp FrameParser.cpp main.cpp)
+add_executable(vision-app VisionModule.cpp UserInterface.cpp FrameParser.cpp main.cpp)
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/include

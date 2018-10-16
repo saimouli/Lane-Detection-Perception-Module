@@ -90,6 +90,8 @@ int UserInterface::returnCameraID() {
 }
 
 void UserInterface::displayLanes(cv::Mat frame) {
-
+  // Create a window for display.
+  namedWindow("Display window", cv::WINDOW_AUTOSIZE);
+  imshow("Display window", frame);
 }
 
