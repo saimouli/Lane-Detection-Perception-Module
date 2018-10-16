@@ -153,7 +153,7 @@ std::vector<cv::Point> VisionModule::isolateLane(cv::Point peak,
     // Store the left and right box centroids
     boxCentroid.push_back(cv::Point(peak.x, (topY + bottomY) / 2));
   }
-  imshow("top view", topView);
+
   return boxCentroid;
 }
 
