@@ -74,14 +74,6 @@ class FrameParser {
    * and stores the frames in the private variable frame
    */
   void extractFrame();
-  /**
-   * @brief Function processFrames
-   * @param none
-   * @return none
-   * The following function will call the visionModule class function and pass
-   * the frames to the visionModule class methods
-   */
-  void processFrame();
 };
 
 #endif /* INCLUDE_FRAMEPARSER_H_ */
