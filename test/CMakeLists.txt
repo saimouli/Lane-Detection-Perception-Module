@@ -5,6 +5,10 @@ add_executable(
     main.cpp
     VisionModuleTest.cpp
     FrameParserTest.cpp
+    UserInterfaceTest.cpp
+    ../app/VisionModule.cpp
+    ../app/FrameParser.cpp
+    ../app/UserInterface.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include ../vendor/googletest/googlemock/include
