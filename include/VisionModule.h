@@ -56,50 +56,61 @@ class VisionModule {
    */
   cv::Mat distortionCoeff =
       (cv::Mat_<double>(1, 5) << -2.42565104e-01, -4.77893070e-02, -1.31388084e-03, -8.79107779e-05, 2.20573263e-02);
+
   /**
    * @brief Stores camera matrix parameters
    */
   cv::Mat cameraMatrix =
       (cv::Mat_<double>(3, 3) << 1.15422732e+03, 0.00000000e+00, 6.71627794e+02, 0.00000000e+00, 1.14818221e+03, 3.86046312e+02, 0, 0, 1);
+
   /**
    * @brief Container to store undistored frames
    */
   cv::Mat undistortedFrame;
+
   /**
    * @brief Container to store masked frames
    */
   cv::Mat mask;
+
   /**
    * @brief Container to store histogram peak values
    */
   std::vector<cv::Point> peaks;
+
   /**
    * @brief Stores histogram box numbers
    */
   int numBoxes = 9;
+
   /**
    * @brief Stores histogram box margins numbers
    */
   int boxMargin = 100;
+
   /**
    * @brief variable to all the pixel sum in the histogram
    */
   int pixelLocSum = 0;
+
   /**
    * @brief variable to store vector of source points used for cropping
    */
   std::vector<cv::Point2f> srcPoints = { cv::Point2f(581, 477), cv::Point2f(
       699, 477), cv::Point2f(896, 675), cv::Point2f(384, 675) };
+
   /**
    * @brief variable to store vector of distance points used for cropping
    */
   std::vector<cv::Point2f> dstPoints = { cv::Point2f(384, 0), cv::Point2f(896,
                                                                           0),
       cv::Point2f(896, 720), cv::Point2f(384, 720) };
+
   /**
    * @brief container to store the matrix for perspective transform
    */
   std::vector<cv::Mat> perspectiveMatrices;
+
   /**
    * @brief Container to store heading angle
    */
@@ -150,7 +161,7 @@ class VisionModule {
    * @brief Function smoothenImage
    * @param none
    * @return none
-   * The following function will denoise the image by applying gaussian filter
+   * The following function will smoothen the image by applying gaussian filter
    */
   void smoothenImage();
 

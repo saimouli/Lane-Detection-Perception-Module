@@ -44,8 +44,8 @@
 /**
  * @brief Class FrameParser
  * The following class FrameParser aids UserInterface class by parsing the
- * frames in a video and calling the VisionModule class for further image processing
- * using OpenCV
+ * frames in a video and calling the VisionModule and UserInterface class for 
+ * further image processing using OpenCV
  */
 
 class FrameParser {
@@ -76,10 +76,10 @@ class FrameParser {
 
   /**
    * @brief Function extractFrames
-   * @param test of type bool
+   * @param interface of type UserInterface
    * @return 0 if the program is sucessful else -1
    * The following function will extract frames from the video input
-   * and stores the frames in the private variable frame
+   * and using the frames calls VisionModule and userInterface class
    */
   int extractFrame(UserInterface interface);
 };

@@ -28,8 +28,8 @@
  * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
  * @brief     UserInterface Class declaration
- * @detail    Declared functions Class to interact with user about the input format
- *            and to diaplay the output on the video
+ * @detail    Declared function Class to interact with user about the input format
+ *            and to display the lanes and text on top of the video
  */
 
 #include <iostream>
@@ -74,6 +74,7 @@ class UserInterface {
    * @return none
    */
   UserInterface();
+
   /**
    * @brief constructor UserInterface
    * @param  userChoice of type int
@@ -83,20 +84,23 @@ class UserInterface {
    * @return none
    */
   UserInterface(int, const std::string&, int, const std::string&);
+
   /**
    * @brief destructor UserInterface
    * @param none
    * @return none
    */
   ~UserInterface();
+
   /**
    * @brief Function returnDefaultChoice
    * @param none
-   * @return true or false (a boolean)
+   * @return yes (y) or no (n) of type std::string 
    * The following function will prompt user if they want to test for
    * the default case
    */
   std::string returnDefaultChoice();
+
   /**
    * @brief Function getUserChoice
    * @param none
@@ -105,14 +109,16 @@ class UserInterface {
    * and stores into the private variable userChoice
    */
   void getUserChoice();
+
   /**
    * @brief Function returnUserChoice
    * @param none
-   * @return userChoice
+   * @return userChoice of type int
    * The following function will access and return the private varible
    * userChoice, which contains the user input.
    */
   int returnUserChoice();
+
   /**
    * @brief Function getInputLocation
    * @param none
@@ -121,22 +127,25 @@ class UserInterface {
    * location and stores into the private variable fileLocation.
    */
   void getInputLocation();
+
   /**
    * @brief Function returnInputLocation
    * @param none
-   * @return fileLocation
+   * @return fileLocation of type std::string
    * The following function will access and return the private varible
    * fileLocation, which contains the user input file location.
    */
   std::string returnInputLocation();
+
   /**
    * @brief Function returnCameraID
    * @param none
-   * @return cameraID
+   * @return cameraID of type int
    * The following function will access and return the private varible
    * cameraID, which contains the user input for the camera number.
    */
   int returnCameraID();
+
   /**
    * @brief Function displayLanes
    * @param frame of type cv::Mat
