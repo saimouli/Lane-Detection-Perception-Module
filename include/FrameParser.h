@@ -73,7 +73,7 @@ class FrameParser {
    * The following function will extract frames from the video input
    * and stores the frames in the private variable frame
    */
-  void extractFrame();
+   int extractFrame(UserInterface interface);
 };
 
 #endif /* INCLUDE_FRAMEPARSER_H_ */
