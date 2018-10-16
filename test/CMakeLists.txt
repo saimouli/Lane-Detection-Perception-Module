@@ -4,7 +4,7 @@ add_executable(
     cpp-test
     main.cpp
     VisionModuleTest.cpp
-    FrameParserTest.cpp
+    #FrameParserTest.cpp
     UserInterfaceTest.cpp
     ../app/VisionModule.cpp
     ../app/FrameParser.cpp

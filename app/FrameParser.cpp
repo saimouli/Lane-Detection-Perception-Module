@@ -58,7 +58,7 @@ int FrameParser::extractFrame(UserInterface interface) {
   if (choice == 0) {
     fileName = interface.returnInputLocation();
     frame = cv::imread(fileName);
-    // check for vaild input
+    // check for valid input
     if (!frame.data) {
       std::cout << "Could not open or find the image" << std::endl;
       return -1;
