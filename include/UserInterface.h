@@ -39,10 +39,6 @@
 
 #ifndef INCLUDE_USERINTERFACE_H_
 #define INCLUDE_USERINTERFACE_H_
-
-using std::string;
-using cv::Mat;
-
 /**
  * @brief Class UserInterface
  * The following class UserInterface gets the user input and interacts with the
