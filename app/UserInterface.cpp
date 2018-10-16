@@ -25,6 +25,7 @@
 /**
  * @file      main.cpp
  * @author    Saimouli Katragadda (saimouli)
+ * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
  * @brief     Implements UserInterface class methods
  */
@@ -32,12 +33,26 @@
 
 UserInterface::UserInterface()
     : userChoice(1),
-      fileLocation("/data/data.mp4") {
+      fileLocation("../data/project_video.mp4"),
+      cameraID(0),
+      defaultChoice("n") {
+}
 
+UserInterface::UserInterface(int userChoicePassed,
+                             const std::string& fileLocationPassed,
+                             int camerIDPassed,
+                             const std::string& defaultChoicePassed)
+    : fileLocation(fileLocationPassed),
+      defaultChoice(defaultChoicePassed) {
+  userChoice = userChoicePassed;
+  cameraID = camerIDPassed;
 }
 
 UserInterface::~UserInterface() {
+}
 
+std::string UserInterface::returnDefaultChoice() {
+  return defaultChoice;
 }
 
 void UserInterface::getUserChoice() {
@@ -45,7 +60,6 @@ void UserInterface::getUserChoice() {
 }
 
 int UserInterface::returnUserChoice() {
-
   return userChoice;
 }
 
@@ -56,3 +70,12 @@ void UserInterface::getInputLocation() {
 std::string UserInterface::returnInputLocation() {
   return fileLocation;
 }
+
+int UserInterface::returnCameraID() {
+  return cameraID;
+}
+
+void UserInterface::displayLanes(cv::Mat frame) {
+ 
+}
+
