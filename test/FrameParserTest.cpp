@@ -50,7 +50,7 @@ TEST(extractFramesCheck, testProperReturnsAfterGoodRun) {
   UserInterface u(1, "../data/testVideo.mp4", 15, "y");
   std::cout << u.returnDefaultChoice() << std::endl;
   int returnValue;
-  returnValue = f.extractFrame(u);
+  returnValue = f.extractFrame(u, true);
   ASSERT_EQ(returnValue, 0);
 }
 
