@@ -202,7 +202,7 @@ class VisionModule {
    * The following function will detect edges in images
    */
 
-  void edgeFilter(&cv::Mat processFrame);
+  void edgeFilter(cv::Mat& processFrame);
 
   /**
    * @brief Function houghLinesDetect
@@ -211,7 +211,7 @@ class VisionModule {
    * The following function will detect hough lines on a
    * processed image
    */
-  vector<cv::Vec4i> houghLinesDetect(&cv::Mat processFrames);
+  std::vector<cv::Vec4i> houghLinesDetect(cv::Mat& processFrames);
 
   /**
    * @brief Function getHistogramPeaks
