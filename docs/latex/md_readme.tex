@@ -1,0 +1,138 @@
+\href{https://travis-ci.org/saimouli/Lane-Detection-Perception-Module}{\tt } \href{https://coveralls.io/github/saimouli/Lane-Detection-Perception-Module?branch=master}{\tt } \subsection*{\href{https://opensource.org/licenses/MIT}{\tt } }
+
+\subsection*{Overview}
+
+This repository contains the implementation of a perception module capable of detecting and tracking traffic lanes. The camera is attached at the center of a moving vehicle. The input to this module can be any of the following formats\+: an image, a video or a live stream. The developed module is capable of detecting and augmenting lines on the input format while updating the heading angle of the car to the controller. Further details about the module are discussed in the algorithm overview.
+
+ 
+
+The whole demo video can be found \href{https://www.youtube.com/watch?v=-Mf2Tt2DLRo&feature=youtu.be}{\tt here}
+
+\subsection*{Algorithm Overview}
+
+ 
+
+ 
+
+\subsection*{Dependencies}
+
+To build this module, the following dependecies should be met\+:
+
+
+\begin{DoxyItemize}
+\item C\+Make version at least 3.\+2
+\item Open\+CV 3.\+1 or higher\+: Installation instructions can be found \href{https://www.learnopencv.com/install-opencv3-on-ubuntu/}{\tt here}
+\item Google Test\+: Unit test requires gtest framework by Google
+\end{DoxyItemize}
+
+\subsection*{Product Backlog and Sprint Schedule}
+
+Please visit the link at\+: \href{https://docs.google.com/spreadsheets/d/1zOa9ZJuQaPj7fCO_8nVtLgBPcMP1-hMzZ2huXdk1TFU/edit?usp=sharing}{\tt https\+://docs.\+google.\+com/spreadsheets/d/1z\+Oa9\+Z\+Ju\+Qa\+Pj7f\+C\+O\+\_\+8n\+Vt\+Lg\+B\+Pc\+M\+P1-\/h\+Mz\+Z2hu\+Xdk1\+T\+F\+U/edit?usp=sharing}
+
+\#\# License 
+\begin{DoxyCode}
+1 MIT License
+2 
+3 Copyright (c) 2018 Saimouli Katragadda, Adarsh Jagan Sathyamoorthy
+4 
+5 Permission is hereby granted, free of charge, to any person obtaining a copy
+6 of this software and associated documentation files (the "Software"), to deal
+7 in the Software without restriction, including without limitation the rights
+8 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+9 copies of the Software, and to permit persons to whom the Software is
+10 furnished to do so, subject to the following conditions:
+11 
+12 The above copyright notice and this permission notice shall be included in all
+13 copies or substantial portions of the Software.
+14 
+15 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+16 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+17 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+18 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+19 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+20 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+21 SOFTWARE.
+\end{DoxyCode}
+ \#\# Build package 
+\begin{DoxyCode}
+1 git clone --recursive https://github.com/saimouli/Lane-Detection-Perception-Module.git
+2 cd <path to repository>
+3 mkdir build
+4 cd build
+5 cmake ..
+6 make
+\end{DoxyCode}
+ \#\# Run module/demo 
+\begin{DoxyCode}
+1 Run program: ./app/vision-app
+\end{DoxyCode}
+ Follow the instructions displayed on the terminal.
+
+Press \char`\"{}y\char`\"{} if you would like to run a default test case.
+
+\#\# Running tests 
+\begin{DoxyCode}
+1 Run tests: ./test/cpp-test
+\end{DoxyCode}
+ \#\# Building for code coverage 
+\begin{DoxyCode}
+1 sudo apt-get install lcov
+2 cmake -D COVERAGE=ON -D CMAKE\_BUILD\_TYPE=Debug ../
+3 make
+4 make code\_coverage
+\end{DoxyCode}
+ This generates a index.\+html page in the build/coverage sub-\/directory that can be viewed locally in a web browser.
+
+\subsection*{Doxygen}
+
+To install Doxygen 
+\begin{DoxyCode}
+1 sudo apt install doxygen
+\end{DoxyCode}
+ To generate the Doxygen documentation 
+\begin{DoxyCode}
+1 doxygen ./Doxygen
+\end{DoxyCode}
+
+
+\subsection*{Working with Eclipse I\+DE}
+
+\subsection*{Installation}
+
+In your Eclipse workspace directory (or create a new one), checkout the repo (and submodules) 
+\begin{DoxyCode}
+1 mkdir -p ~/workspace
+2 cd ~/workspace
+3 git clone --recursive https://github.com/saimouli/Lane-Detection-Perception-Module.git
+\end{DoxyCode}
+
+
+In your work directory, use cmake to create an Eclipse project for an \mbox{[}out-\/of-\/source build\mbox{]} of cpp-\/boilerplate
+
+
+\begin{DoxyCode}
+1 cd ~/workspace
+2 mkdir -p LaneVision-eclipse
+3 cd LaneVision-eclipse
+4 cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE\_BUILD\_TYPE=Debug -D CMAKE\_ECLIPSE\_VERSION=4.7.0 -D
+       CMAKE\_CXX\_COMPILER\_ARG1=-std=c++14 ../Lane-Detection-Perception-Module/
+\end{DoxyCode}
+ \subsection*{Import}
+
+Open Eclipse, go to File -\/$>$ Import -\/$>$ General -\/$>$ Existing Projects into Workspace -\/$>$ Select \char`\"{}\+Lane\+Vision-\/eclipse\char`\"{} directory created previously as root directory -\/$>$ Finish
+
+\section*{Edit}
+
+Source files may be edited under the \char`\"{}\mbox{[}\+Source Directory\mbox{]}\char`\"{} label in the Project Explorer.
+
+\subsection*{Build}
+
+To build the project, in Eclipse, unfold boilerplate-\/eclipse project in Project Explorer, unfold Build Targets, double click on \char`\"{}all\char`\"{} to build all projects.
+
+\subsection*{Run}
+
+
+\begin{DoxyEnumerate}
+\item In Eclipse, right click on the boilerplate-\/eclipse in Project Explorer, select Run As -\/$>$ Local C/\+C++ Application
+\item Choose the binaries to run (vision-\/app for application, cpp-\/test for unit testing) 
+\end{DoxyEnumerate}
