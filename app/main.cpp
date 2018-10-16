@@ -37,7 +37,7 @@
 int main() {
   FrameParser parser;
   UserInterface interface;
-  parser.extractFrame(interface);
+  parser.extractFrame(interface, false);
   return 0;
 }
 

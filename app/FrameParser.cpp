@@ -39,7 +39,7 @@ FrameParser::FrameParser() {
 FrameParser::~FrameParser() {
 }
 
-int FrameParser::extractFrame(UserInterface interface) {
+int FrameParser::extractFrame(UserInterface interface, bool test) {
   VisionModule process;
   std::string defaultChoice;
   defaultChoice = interface.returnDefaultChoice();
@@ -64,8 +64,9 @@ int FrameParser::extractFrame(UserInterface interface) {
       return -1;
     }
     frame = process.laneDetection(frame);
-    interface.displayLanes(frame);
-
+    if (test == false) {
+      interface.displayLanes(frame);
+    }
     std::cout << "To quit press any keystroke in the window" << std::endl;
     // Wait for a keystroke in the window
     cv::waitKey(0);
@@ -89,7 +90,9 @@ int FrameParser::extractFrame(UserInterface interface) {
       break;
     }
     frame = process.laneDetection(frame);
-    interface.displayLanes(frame);
+    if (test == false) {
+      interface.displayLanes(frame);
+    }
 
     // Press  ESC on keyboard to exit
     char c = static_cast<char>(cv::waitKey(25));
