@@ -5,7 +5,22 @@
 ---
 
 ## Overview
-This repository contains the implementation of a perception module capable of detecting and tracking traffic lanes. The camera is attached at the center of a moving vehicle. The input to this module can be any of the following formats: an image, a video or a live stream. The developed module is capable of detecting and augmenting lines on the input format while updating the heading angle of the car to the controller. Further details about the module are discussed below.
+This repository contains the implementation of a perception module capable of detecting and tracking traffic lanes. The camera is attached at the center of a moving vehicle. The input to this module can be any of the following formats: an image, a video or a live stream. The developed module is capable of detecting and augmenting lines on the input format while updating the heading angle of the car to the controller. Further details about the module are discussed in the algorithm overview.
+
+<p align="center">
+  <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/gif.gif?raw=true" alt="Lane detection and heading angle calculation"/>
+</p>
+
+The whole demo video can be found [here](https://www.youtube.com/watch?v=-Mf2Tt2DLRo&feature=youtu.be)
+
+## Algorithm Overview 
+<p align="center">
+  <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/topView.png" alt="Top view angle "/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/laneDetection.png?raw=true" alt="Lane detection and heading angle calculation"/>
+</p>
 
 ## Dependencies
 To build this module, the following dependecies should be met:
@@ -52,16 +67,18 @@ cd build
 cmake ..
 make
 ```
-## Run module 
+## Run module/demo 
 ```
 Run program: ./app/vision-app
 ```
+Follow the instructions displayed on the terminal. 
+
+Press "y" if you would like to run a default test case. 
 
 ## Running tests
 ```
 Run tests: ./test/cpp-test
 ```
-
 ## Building for code coverage 
 ```
 sudo apt-get install lcov
@@ -70,6 +87,16 @@ make
 make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
+
+## Doxygen
+To install Doxygen
+```
+sudo apt install doxygen
+```
+To generate the Doxygen documentation 
+```
+doxygen ./Doxygen
+```
 
 ## Working with Eclipse IDE ##
 
@@ -90,16 +117,6 @@ mkdir -p LaneVision-eclipse
 cd LaneVision-eclipse
 cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../Lane-Detection-Perception-Module/
 ```
-## Doxygen
-To install Doxygen
-```
-sudo apt install doxygen
-```
-To generate the Doxygen documentation 
-```
-doxygen ./Doxygen
-```
-
 ## Import
 
 Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
