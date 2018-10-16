@@ -25,6 +25,7 @@
 /**
  * @file      FrameParser.h
  * @author    Saimouli Katragadda (saimouli)
+ * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
  * @brief     FrameParser Class declaration
  * @detail    Declared functions Class to extract frames from the video input, and
@@ -35,6 +36,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include "UserInterface.h"
 
 #ifndef INCLUDE_FRAMEPARSER_H_
 #define INCLUDE_FRAMEPARSER_H_
@@ -53,6 +55,11 @@ class FrameParser {
    */
   cv::Mat frame;
 
+  /**
+   * @brief Container to store camera output
+   */
+  cv::VideoCapture cap;
+
  public:
   /**
    * @brief constructor FrameParser
@@ -66,14 +73,16 @@ class FrameParser {
    * @return none
    */
   ~FrameParser();
+
   /**
    * @brief Function extractFrames
-   * @param none
-   * @return none
+   * @param test of type bool
+   * @return 0 if the program is sucessful else -1
    * The following function will extract frames from the video input
    * and stores the frames in the private variable frame
    */
-   int extractFrame(UserInterface interface);
+  int extractFrame(UserInterface interface);
 };
 
 #endif /* INCLUDE_FRAMEPARSER_H_ */
+
