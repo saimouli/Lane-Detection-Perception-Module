@@ -25,6 +25,7 @@
 /**
  * @file      UserInterface.h
  * @author    Saimouli Katragadda (saimouli)
+ * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
  * @brief     UserInterface Class declaration
  * @detail    Declared functions Class to interact with user about the input format
@@ -39,6 +40,7 @@
 
 #ifndef INCLUDE_USERINTERFACE_H_
 #define INCLUDE_USERINTERFACE_H_
+
 /**
  * @brief Class UserInterface
  * The following class UserInterface gets the user input and interacts with the
@@ -57,23 +59,44 @@ class UserInterface {
    */
   std::string fileLocation;
   /**
-   * @brief Container for the final frames containing hough lines
+   * @brief Container to store user choice for test cases file format
    */
-  cv::Mat finalFrames;
+  std::string defaultChoice;
+  /**
+   * @brief Container to hold camera ID number
+   */
+  int cameraID;
 
  public:
   /**
-   * @brief constructor UserInterface
+   * @brief Default constructor UserInterface
    * @param none
    * @return none
    */
   UserInterface();
   /**
-   * @brief destructor UserIntefrace
+   * @brief constructor UserInterface
+   * @param  userChoice of type int
+   * @param  fileLocation of type std::string&
+   * @param  cameraID of type int
+   * @param  defaultChoice of type std::string&
+   * @return none
+   */
+  UserInterface(int, const std::string&, int, const std::string&);
+  /**
+   * @brief destructor UserInterface
    * @param none
    * @return none
    */
   ~UserInterface();
+  /**
+   * @brief Function returnDefaultChoice
+   * @param none
+   * @return true or false (a boolean)
+   * The following function will prompt user if they want to test for
+   * the default case
+   */
+  std::string returnDefaultChoice();
   /**
    * @brief Function getUserChoice
    * @param none
@@ -107,13 +130,21 @@ class UserInterface {
    */
   std::string returnInputLocation();
   /**
-   * @brief Function displayLanes
+   * @brief Function returnCameraID
    * @param none
+   * @return cameraID
+   * The following function will access and return the private varible
+   * cameraID, which contains the user input for the camera number.
+   */
+  int returnCameraID();
+  /**
+   * @brief Function displayLanes
+   * @param frame of type cv::Mat
    * @return none
    * The following function displays the final result
    * to the user.
    */
-  void displayLanes();
+  void displayLanes(cv::Mat);
 };
 
 #endif /* INCLUDE_USERINTERFACE_H_ */
