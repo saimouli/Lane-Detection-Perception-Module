@@ -23,7 +23,7 @@
 *******************************************************************************/
 
 /**
- * @file      main.cpp
+ * @file      VisionModuleTest.cpp
  * @author    Saimouli Katragadda (saimouli)
  * @author    Adarsh Jagan Sathyamoorthy
  * @copyright MIT License
@@ -37,6 +37,12 @@
 #include<cmath>
 #include<iostream>
 
+/**
+ * @brief Case to test if CameraMatrix is 3x3 matrix
+ * @param none
+ * @return none
+ */
+
 TEST(cameraMatrixCheck, testcameraMatrixSize) {
   VisionModule v;
   cv::Mat matrix;
@@ -45,6 +51,12 @@ TEST(cameraMatrixCheck, testcameraMatrixSize) {
   ASSERT_EQ(matrix.rows, 3);
 }
 
+/**
+ * @brief Case to test if distortionCoeff is a 5x1 matrix
+ * @param none
+ * @return none
+ */
+
 TEST(distortionCoeffCheck, testdistortionCoeffSize) {
   VisionModule v;
   cv::Mat distortionCoeff;
@@ -52,6 +64,12 @@ TEST(distortionCoeffCheck, testdistortionCoeffSize) {
   ASSERT_EQ(distortionCoeff.cols, 5);
   ASSERT_EQ(distortionCoeff.rows, 1);
 }
+
+/**
+ * @brief Case to test if the frame size we get after resize is equal to the original image size
+ * @param none
+ * @return none
+ */
 
 TEST(undistortFrameCheck, testUndistortedFrameSize) {
   VisionModule v;
@@ -63,6 +81,12 @@ TEST(undistortFrameCheck, testUndistortedFrameSize) {
   ASSERT_EQ(result.cols, testImage.cols);
   ASSERT_EQ(result.rows, testImage.rows);
 }
+
+/**
+ * @brief Case to ensure that the image isn't aggressively smoothened.
+ * @param none
+ * @return none
+ */
 
 TEST(smoothenFrameCheck, testNonAggressiveSmoothing) {
   VisionModule v;
@@ -86,6 +110,13 @@ TEST(smoothenFrameCheck, testNonAggressiveSmoothing) {
   cv::bitwise_xor(result1, result2, diff);
   ASSERT_EQ(cv::countNonZero(diff), 0);
 }
+
+/**
+ * @brief Case to test the sizes of the calculated perspective transform matrices is 3x3
+ *        and the multiplication leads a matrix with non zero diagonal elements.
+ * @param none
+ * @return none
+ */
 
 TEST(persMatrixCheck, testMatrixSizeandInverse) {
   VisionModule v;
@@ -116,6 +147,11 @@ TEST(persMatrixCheck, testMatrixSizeandInverse) {
   EXPECT_EQ(otherElements, zeroes);
 }
 
+/**
+ * @brief Case to test if the returned peaks have the correct x coordinates.
+ * @param none
+ * @return none
+ */
 TEST(peakValueCheck, testLeftRightHistogramPeaks) {
   VisionModule v;
   cv::Mat frame;
@@ -133,6 +169,12 @@ TEST(peakValueCheck, testLeftRightHistogramPeaks) {
   ASSERT_GT(topViewFrame.cols / 2, peaks[0].x);
   ASSERT_LT(topViewFrame.cols / 2, peaks[1].x);
 }
+
+/**
+ * @brief Case to test left and right centroid x coordinates for proper values and correct theta value
+ * @param none
+ * @return none
+ */
 
 TEST(centroidHeadingAngleCheck, checkCentroidVectorandHeadingAngle) {
   VisionModule v;
