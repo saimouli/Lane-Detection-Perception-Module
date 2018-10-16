@@ -39,8 +39,6 @@
 #ifndef INCLUDE_FRAMEPARSER_H_
 #define INCLUDE_FRAMEPARSER_H_
 
-using cv::Mat;
-
 /**
  * @brief Class FrameParser
  * The following class FrameParser aids UserInterface class by parsing the
