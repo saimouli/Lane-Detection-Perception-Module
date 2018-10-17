@@ -13,6 +13,10 @@ This repository contains the implementation of a perception module capable of de
 
 The whole demo video can be found [here](https://www.youtube.com/watch?v=-Mf2Tt2DLRo&feature=youtu.be)
 
+## Important note
+The coveralls website was unresponsive since mid of tuesday(10/16/2018), so the coverage output of make code_coverage is stored in the results folder.
+
+
 ## Algorithm Overview
 
 The overall workflow:
