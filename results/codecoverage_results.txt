@@ -1,0 +1,169 @@
+Code coverage output:
+
+[100%] Resetting code coverage counters to zero.
+Processing code coverage counters and generating report.
+Deleting all .da files in . and subdirectories
+Done.
+[==========] Running 9 tests from 9 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from cameraMatrixCheck
+[ RUN      ] cameraMatrixCheck.testcameraMatrixSize
+[       OK ] cameraMatrixCheck.testcameraMatrixSize (0 ms)
+[----------] 1 test from cameraMatrixCheck (0 ms total)
+
+[----------] 1 test from distortionCoeffCheck
+[ RUN      ] distortionCoeffCheck.testdistortionCoeffSize
+[       OK ] distortionCoeffCheck.testdistortionCoeffSize (0 ms)
+[----------] 1 test from distortionCoeffCheck (0 ms total)
+
+[----------] 1 test from undistortFrameCheck
+[ RUN      ] undistortFrameCheck.testUndistortedFrameSize
+[       OK ] undistortFrameCheck.testUndistortedFrameSize (35 ms)
+[----------] 1 test from undistortFrameCheck (35 ms total)
+
+[----------] 1 test from smoothenFrameCheck
+[ RUN      ] smoothenFrameCheck.testNonAggressiveSmoothing
+[       OK ] smoothenFrameCheck.testNonAggressiveSmoothing (37 ms)
+[----------] 1 test from smoothenFrameCheck (37 ms total)
+
+[----------] 1 test from persMatrixCheck
+[ RUN      ] persMatrixCheck.testMatrixSizeandInverse
+[0.1419665317729361, 3.108624468950438e-15, 2.671640686457977e-12;
+ 2.196740935791307e-15, 0.1419665317729376, 1.364242052659392e-12;
+ 2.171526233759604e-18, 3.035766082959412e-18, 0.1419665317729377]
+[       OK ] persMatrixCheck.testMatrixSizeandInverse (0 ms)
+[----------] 1 test from persMatrixCheck (0 ms total)
+
+[----------] 1 test from peakValueCheck
+[ RUN      ] peakValueCheck.testLeftRightHistogramPeaks
+[       OK ] peakValueCheck.testLeftRightHistogramPeaks (33 ms)
+[----------] 1 test from peakValueCheck (33 ms total)
+
+[----------] 1 test from centroidHeadingAngleCheck
+[ RUN      ] centroidHeadingAngleCheck.checkCentroidVectorandHeadingAngle
+[       OK ] centroidHeadingAngleCheck.checkCentroidVectorandHeadingAngle (21 ms)
+[----------] 1 test from centroidHeadingAngleCheck (21 ms total)
+
+[----------] 1 test from extractFramesCheck
+[ RUN      ] extractFramesCheck.testProperReturnsAfterGoodRun
+y
+Thanks for using Vision Module app! 
+[       OK ] extractFramesCheck.testProperReturnsAfterGoodRun (3283 ms)
+[----------] 1 test from extractFramesCheck (3283 ms total)
+
+[----------] 1 test from UserInterfacetest
+[ RUN      ] UserInterfacetest.UserChoiceMethodTest
+[       OK ] UserInterfacetest.UserChoiceMethodTest (0 ms)
+[----------] 1 test from UserInterfacetest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 9 test cases ran. (3409 ms total)
+[  PASSED  ] 9 tests.
+Capturing coverage data from .
+Found gcov version: 5.4.0
+Scanning . for .gcda files ...
+Found 8 data files in .
+Processing test/CMakeFiles/cpp-test.dir/VisionModuleTest.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/UserInterfaceTest.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/FrameParserTest.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/VisionModule.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/FrameParser.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/__/app/UserInterface.cpp.gcda
+Processing test/CMakeFiles/cpp-test.dir/main.cpp.gcda
+Processing vendor/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+Finished .info-file creation
+Reading tracefile /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/build/coverage.info
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/gtest-message.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/gtest-printers.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/gtest-test-part.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/gtest.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/internal/gtest-filepath.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/internal/gtest-internal.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/internal/gtest-param-util.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/include/gtest/internal/gtest-port.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-death-test.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-filepath.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-internal-inl.h
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-port.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-printers.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-test-part.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest-typed-test.cc
+Removing /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/vendor/googletest/googletest/src/gtest.cc
+Removing /usr/include/c++/5/bits/alloc_traits.h
+Removing /usr/include/c++/5/bits/allocator.h
+Removing /usr/include/c++/5/bits/basic_string.h
+Removing /usr/include/c++/5/bits/basic_string.tcc
+Removing /usr/include/c++/5/bits/char_traits.h
+Removing /usr/include/c++/5/bits/ios_base.h
+Removing /usr/include/c++/5/bits/list.tcc
+Removing /usr/include/c++/5/bits/move.h
+Removing /usr/include/c++/5/bits/predefined_ops.h
+Removing /usr/include/c++/5/bits/range_access.h
+Removing /usr/include/c++/5/bits/stl_algo.h
+Removing /usr/include/c++/5/bits/stl_algobase.h
+Removing /usr/include/c++/5/bits/stl_construct.h
+Removing /usr/include/c++/5/bits/stl_function.h
+Removing /usr/include/c++/5/bits/stl_iterator.h
+Removing /usr/include/c++/5/bits/stl_iterator_base_funcs.h
+Removing /usr/include/c++/5/bits/stl_iterator_base_types.h
+Removing /usr/include/c++/5/bits/stl_list.h
+Removing /usr/include/c++/5/bits/stl_map.h
+Removing /usr/include/c++/5/bits/stl_pair.h
+Removing /usr/include/c++/5/bits/stl_set.h
+Removing /usr/include/c++/5/bits/stl_tree.h
+Removing /usr/include/c++/5/bits/stl_uninitialized.h
+Removing /usr/include/c++/5/bits/stl_vector.h
+Removing /usr/include/c++/5/bits/vector.tcc
+Removing /usr/include/c++/5/ext/aligned_buffer.h
+Removing /usr/include/c++/5/ext/alloc_traits.h
+Removing /usr/include/c++/5/ext/new_allocator.h
+Removing /usr/include/c++/5/ext/string_conversions.h
+Removing /usr/include/c++/5/ext/type_traits.h
+Removing /usr/include/c++/5/initializer_list
+Removing /usr/include/c++/5/iomanip
+Removing /usr/include/c++/5/iostream
+Removing /usr/include/c++/5/new
+Removing /usr/include/c++/5/tuple
+Removing /usr/include/c++/5/type_traits
+Removing /usr/include/c++/5/typeinfo
+Removing /usr/lib/gcc/x86_64-linux-gnu/5/include/xmmintrin.h
+Removing /usr/local/include/opencv2/core.hpp
+Removing /usr/local/include/opencv2/core/cvstd.hpp
+Removing /usr/local/include/opencv2/core/cvstd.inl.hpp
+Removing /usr/local/include/opencv2/core/fast_math.hpp
+Removing /usr/local/include/opencv2/core/mat.hpp
+Removing /usr/local/include/opencv2/core/mat.inl.hpp
+Removing /usr/local/include/opencv2/core/matx.hpp
+Removing /usr/local/include/opencv2/core/ptr.inl.hpp
+Removing /usr/local/include/opencv2/core/saturate.hpp
+Removing /usr/local/include/opencv2/core/types.hpp
+Removing /usr/local/include/opencv2/flann/any.h
+Removing /usr/local/include/opencv2/imgproc.hpp
+Removing /usr/local/include/opencv2/videoio.hpp
+Deleted 68 files
+Writing data to /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/build/coverage.info.cleaned
+Summary coverage rate:
+  lines......: 85.7% (294 of 343 lines)
+  functions..: 95.2% (79 of 83 functions)
+  branches...: no data found
+Reading data file /home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module/build/coverage.info.cleaned
+Found 9 entries.
+Found common filename prefix "/home/adarshjs/software_assignments/final/Lane-Detection-Perception-Module"
+Writing .css and .png files.
+Generating output.
+Processing file app/VisionModule.cpp
+Processing file app/UserInterface.cpp
+Processing file app/FrameParser.cpp
+Processing file include/VisionModule.h
+Processing file include/UserInterface.h
+Processing file test/FrameParserTest.cpp
+Processing file test/VisionModuleTest.cpp
+Processing file test/main.cpp
+Processing file test/UserInterfaceTest.cpp
+Writing directory view page.
+Overall coverage rate:
+  lines......: 85.7% (294 of 343 lines)
+  functions..: 95.2% (79 of 83 functions)
+Open ./coverage/index.html in your browser to view the coverage report.
+[100%] Built target code_coverage
