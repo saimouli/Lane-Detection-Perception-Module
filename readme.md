@@ -5,7 +5,7 @@
 ---
 
 ## Overview
-This repository contains the implementation of a perception module capable of detecting and tracking traffic lanes. The camera is attached at the center of a moving vehicle. The input to this module can be any of the following formats: an image, a video or a live stream. The developed module is capable of detecting and augmenting lines on the input format while updating the heading angle of the car to the controller. Further details about the module are discussed in the algorithm overview.
+This repository contains the implementation of a perception module capable of detecting and tracking traffic lanes. We assume that the camera is attached at the center of a moving vehicle. The input to this module can be any of the following formats: an image, a video or a live stream. The developed module is capable of detecting and augmenting lines on the input format while updating the heading angle of the car to the controller. Further details about the module are discussed in the algorithm overview.
 
 <p align="center">
   <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/gif.gif?raw=true" alt="Lane detection and heading angle calculation"/>
@@ -13,14 +13,47 @@ This repository contains the implementation of a perception module capable of de
 
 The whole demo video can be found [here](https://www.youtube.com/watch?v=-Mf2Tt2DLRo&feature=youtu.be)
 
-## Algorithm Overview 
+## Algorithm Overview
+
+The overall workflow:
+
+1. Each frame in the video is extracted and undistorted using the camera matrix and and distortion coefficients.
+
+2. The undistorted image is then smoothened using a Gaussian blur.
+
+3. The perspective transformation matrices are calculated using user-defined points in the straight view and their desired locations in the top view of the road.
+
+4. Using the transformation matrices, the top view of the road is obtained (as shown below).
+ 
 <p align="center">
   <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/topView.png" alt="Top view angle "/>
 </p>
 
+5. The top view of the frame is then thresholded for white and yellow colors and a binary image is created.
+
+6. A histogram of the number of white pixels is calculated along the width of the binarized top view.
+
+7. The maximum values in this histogram is treated as the peak of the histogram. There will be one peak per lane. So in out case, there will be a peak on the left half and right half of the image.
+
+8. Using the peak location as reference rectangular boxes are drawn, stacked on top of each other.
+
+9. If the number of white pixels in a particular rectangular box is greater than a given threshold, the box is moved along the x direction based on the mean of all white pixel x locations.
+
+10. The centroid of these "self-adjusting" boxes are taken and a line is plotted through the centroids in the middle (say 2nd and 6th box), avoiding the extreme centroids. (Extreme centroids may be inconsistent due to the lack of a white region to self adjust.)
+
+11. The end points of the lines drawn (coordinates of the 2nd and 6th boxes' centroids), are taken and an inverse perspective transform is applied to get the straight view. A polygon is drawn using these transformed points, as shown below.
+
 <p align="center">
   <img src="https://github.com/saimouli/Lane-Detection-Perception-Module/blob/master/images/laneDetection.png?raw=true" alt="Lane detection and heading angle calculation"/>
 </p>
+
+12. The average line (plotted between the average of the end points of the two lines) between the two lines drawn is taken and the slope of this line is calculated. The angle of this line with the horizontal (x axis) will be the inverse tan of the slope. This angle is converted to degrees and subtracted from 90 to get the angle with respect to the vertical/ straight direction.
+
+## Advantages
+This implementation is able to handle random lines / blemishes on the road. For example, the bridge in the dataset is drastically different from the other parts of the road. But the algorithm is able to handle this.
+
+## Limitation
+The thresholding in this implementation may not work under some lighting conditions. 
 
 ## Dependencies
 To build this module, the following dependecies should be met:
@@ -69,11 +102,39 @@ make
 ```
 ## Run module/demo 
 ```
+cd <path to repository>
+cd build
 Run program: ./app/vision-app
 ```
 Follow the instructions displayed on the terminal. 
 
-Press "y" if you would like to run a default test case. 
+If you want to run the demo, run the program as given above, the following will be displayed:
+
+```
+Do you want to test for default case? (enter y/n)
+``` 
+
+Press y and the implementation on the dataset will run, along with the heading angle on the top left corner.
+
+If you press n:
+```
+Enter 0- image input, 1- video file, 2- live stream
+```
+will be displayed. Enter your choice, 0 for Image input, 1 for video file, 2 for live stream.
+If 0 or 1 is given, a file location is asked:
+
+```
+Enter the location of the file (ex:../data/project_video.mp4)
+```
+To run a simple test, enter ../data/test.png for an image.
+For video, ../data/project_video.mp4 can be used.
+
+In case of live feed, you will be prompted to enter the cameraID. 
+```
+Enter the camera ID number (Ex: 0)
+```
+Enter a valid camera ID and the live stream will be displayed. If there are valid lanes within the frame with appropriate lighting conditions, the lane will be tracked.
+
 
 ## Running tests
 ```
