@@ -64,8 +64,9 @@ To build this module, the following dependecies should be met:
 
 ## Product Backlog and Sprint Schedule
 
-Please visit the link at:
-https://docs.google.com/spreadsheets/d/1zOa9ZJuQaPj7fCO_8nVtLgBPcMP1-hMzZ2huXdk1TFU/edit?usp=sharing
+Please visit the link [here](https://docs.google.com/spreadsheets/d/1zOa9ZJuQaPj7fCO_8nVtLgBPcMP1-hMzZ2huXdk1TFU/edit?usp=sharing)
+
+Adarsh Jagan Sathyamoorthy and Saimouli Katragadda worked together on this implementation and alternate commits were made. The commits are made by the driver while the other person acted as navigator. 
 
 ## License 
 ```
